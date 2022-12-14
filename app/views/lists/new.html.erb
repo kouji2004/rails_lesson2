@@ -1,2 +1,17 @@
-<%= form_with do |f| %>
+<!--
+form_withヘルパーとは
+Railsには、Viewなどから呼び出す共通処理をまとめた「ヘルパーメソッド」が用意されています。
+form_withヘルパー(以下、form_with)もその1つで
+セキュリティ対策などが組み込まれた安全なHTMLのformタグを作成でき、またRailsの機能を最大限生かすことが可能です。
+-->
+<h1>新規投稿</h1>
+<!-- form_with部分 -->
+<%= form_with model: List.new do |f| %>
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+
+  <h4>本文</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit '投稿' %>
 <% end %>
