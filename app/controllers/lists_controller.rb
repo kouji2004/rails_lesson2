@@ -4,8 +4,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    list = List.new(list_params)
-    list.save
+    @list = List.new(list_params)
+    @list.save
     redirect_to "/top"
   end
 
@@ -21,7 +21,7 @@ class ListsController < ApplicationController
   end
 
   private
-  def lest_params
-    params.require(:list).permit(:title, :body)
+  def list_params
+    params.require(:List).permit(:title, :body)
   end
 end
