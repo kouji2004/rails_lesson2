@@ -1,3 +1,12 @@
+<% if @list.errors.any? %>
+  <%= @list.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <!--
 form_withヘルパーとは
 Railsには、Viewなどから呼び出す共通処理をまとめた「ヘルパーメソッド」が用意されています。
